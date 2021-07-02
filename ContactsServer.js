@@ -1,7 +1,9 @@
-const { POINT_CONVERSION_COMPRESSED } = require('constants');
+// Elmer Chavez
+// IS 210
+
 const EXPRESS       = require('express');
 const BODYPARSER    = require('body-parser');
-const { Client }    = require('pg');
+const PG            = require('pg');
 const APP           = new EXPRESS();
 const PORT          = 3500;
 const SUCCESS_CODE  = 200;
@@ -15,7 +17,7 @@ APP.use(EXPRESS.static('static'));
 // Returns a new instance of a Postgres Client object. 
 function createDBClient()
 {
-    var client = new Client({
+    var client = new PG.Client({
         user: 'alfonso',
         host: 'localhost',
         database: 'is210',
