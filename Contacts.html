@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="Contacts.js"></script>  
+        <link href="Contacts.css" rel="stylesheet"> 
+    </head>
+    <body id="page_body">
+        <div id="title_div">
+            <h1>My Contacts</h1>
+        </div>
+        <div class="display_container">
+            <div class="edit_contacts">
+                <form> 
+                    <label>First Name</label> 
+                    <input type="text" id="first_name_element" value="" onchange="onChangeContact()" onkeypress="onKeyPress(event)"> 
+                </form> 
+                <br>
+                <form> 
+                    <label>Last Name</label> 
+                    <input type="text" id="last_name_element" value="" onchange="onChangeContact()" onkeypress="onKeyPress(event)"> 
+                </form> 
+                <br>
+                <form> 
+                    <label>Phone Number</label> 
+                    <input type="text" id="phone_number_element" value="" onchange="onChangeContact()" onkeypress="onKeyPress(event)"> 
+                </form> 
+                <br>
+                <form> 
+                    <label>Email Address</label> 
+                    <input type="text" id="email_element" value="" onchange="onChangeContact()" onkeypress="onKeyPress(event)"> 
+                </form> 
+                <br>
+                <form> 
+                    <label>Gender</label> 
+                    <select id="gender_element" class="edit_field" value="" onchange="onChangeContact()"> 
+                        <option value = ""></option>
+                        <option value = "Male">Male</option>
+                        <option value = "Female">Female</option>
+                        <option value = "Other">Other</option>
+                    </select>   
+                </form> 
+                <br>
+                <form> 
+                    <label>Age</label> 
+                    <input type="number" id="age_element" value="" min="1" onchange="onChangeContact()" onkeypress="onKeyPress(event)"> 
+                </form> 
+                <br>
+                <form> 
+                    <label>ID</label> 
+                    <input type="number" id="id_element" value="" min="0" onchange="onChangeContact()" onkeypress="onKeyPress(event)" disabled> 
+                </form> 
+                <br>
+
+                <button id="clear_all_button" type="button" name="clear_all_button" onclick = "onClickClearFieldsButton()" disabled> New/Clear </button>
+
+                <!-- This is just to provide space between the buttons -->
+                <button type="button" style="visibility: hidden;" >Hidden B.</button>
+                
+                <button id="delete_contact_button" type="button" name="delete_contact_button" onclick = "onClickDeleteContactButton()" disabled> Delete </button>
+
+                <button id="save_contact_button" type="button" name="save_contact_button" onclick = "onClickSaveContactButton()" disabled> Save/Update </button>
+            </div>
+
+            <!-- This division provides horizontal space between 
+                the contact edit fields and the table -->
+            <div class="middle_spacing"> </div>
+
+            <div class="contacts_table_container">
+                <table id="contacts_table">
+                    <tr>
+                        <th style="cursor: pointer;"
+                            onmouseover="addCellHighlight(event)" 
+                            onmouseout="removeCellHighlight(event)" 
+                            onclick="onClickFirstNameTableHeader(event)">
+                            <span title="Sort Ascending/Descending">First Name</span>
+                        </th>
+                        <th style="cursor: pointer;"
+                            onmouseover="addCellHighlight(event)" 
+                            onmouseout="removeCellHighlight(event)" 
+                            onclick="onClickLastNameTableHeader(event)">
+                            <span title="Sort Ascending/Descending">Last Name</span>
+                        </th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Gender</th>
+                        <th>Age</th>
+                        <th>ID</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

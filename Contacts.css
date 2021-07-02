@@ -1,0 +1,81 @@
+#page_body {
+    background: rgb(235, 235, 225);
+}
+
+#title_div {
+    font: 15px Arial, sans-serif;
+    text-align: center;
+    border-bottom: double;
+    background: rgb(235, 235, 225);
+}
+
+.display_container {
+    display: grid;
+    border: 2px solid black;
+    background: rgba(241, 241, 238, 0.904);
+    grid-template-columns: auto auto auto;
+    padding: 50px;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.edit_contacts {
+    width: 25%;
+    height: 70%;
+    background: rgb(235, 235, 225);
+    border: 2px solid black;
+    text-align: right;
+    padding: 10px;
+}
+
+.middle_spacing {
+    width: 3%;
+    height: 100%;
+}
+
+.contacts_table_container{
+    width: 72%;
+    height: 100%;
+    background: rgb(235, 235, 225);
+    border: 1px solid black;
+    flex: 1;
+}
+
+#clear_all_button {
+    border: 1px solid black;
+}
+
+#delete_contact_button{
+    border: 1px solid black;
+}
+
+#save_contact_button {
+    border: 1px solid black;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th{
+    background: rgb(210, 210, 200);
+    font: 12px Arial, sans-serif, underline;
+    font-weight: bold;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+td {
+    font: 10px Arial, sans-serif;
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    cursor: pointer;
+}
+.edit_field{
+    width:185px;
+}
