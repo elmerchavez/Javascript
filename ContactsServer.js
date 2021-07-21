@@ -9,10 +9,6 @@ const PORT          = 3500;
 const SUCCESS_CODE  = 200;
 const ERROR_CODE    = 400;
 
-APP.use(BODYPARSER.json()); 
-APP.use(EXPRESS.urlencoded({ extended: true }))
-APP.use(EXPRESS.static('static'));
-
 //*****************************************************************************
 // Returns a new instance of a Postgres Client object. 
 function createDBClient()
@@ -48,8 +44,7 @@ APP.get('/', function(req, res)
 });
 
 //*****************************************************************************
-// Returns all row elements from the 'contacts' table.  Returns a JSON object
-// of all the rows of the DB table.  
+// Returns a JSON object of all the rows of the DB table.  
 //
 // usage: http://localhost:3500/list
 APP.get('/list', async (req, res) =>
@@ -60,11 +55,8 @@ APP.get('/list', async (req, res) =>
     var list = "";
     try{
         const dbResults = await client.query('SELECT * FROM contacts');
-        dbResults.rows.forEach(row => {
-            list += `${row.first_name}, ${row.last_name}, ${row.phone}, ${row.email}, ${row.age}, ${row.gender}, ${row.id}` + "\n";
-        })
         console.log(list);
-        res.status(SUCCESS_CODE).json(dbResults); 
+        res.status(SUCCESS_CODE).json(dbResults.rows); 
     }catch(err){
         console.log("/list: Could not run DB query!");
         res.status(ERROR_CODE);

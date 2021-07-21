@@ -27,8 +27,10 @@ const TH_BACK_GROUND_COLOR  = "rgb(210, 210, 200)";
 const DB_SUCCESS    = 200;
 
 //const IP_ADDRESS    = "localhost";
-const IP_ADDRESS    = "192.168.0.10";
-const PORT_NUM      = "3500";
+//const IP_ADDRESS    = "127.0.0.1";
+const IP_ADDRESS    = "192.168.0.10";   // laptop
+const PORT_NUM      = "5000";           // port running flask server
+//const PORT_NUM      = "3500";           // port running nodejs server
 
 // local variables 
 document.selectedRow        = null;     // corresponds to html table row element
@@ -69,7 +71,7 @@ function loadTableFromDB(xhttpContactData)
     if(contactsJSON == null)
         return;
 
-    contactsJSON.rows.forEach(row =>{
+    contactsJSON.forEach(row =>{
         insertNewHTMLRow(row['first_name'],row['last_name'],row['phone'],
                          row['email'],row['gender'],row['age'], row['id']);
     })
